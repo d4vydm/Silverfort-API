@@ -23,6 +23,7 @@ Configuration for logstash can be found in the logstash directory. Deployment of
 
 
 ## Example config file
+```
 {
     "silverfort_logger": {
         "Threshold": 3,
@@ -43,6 +44,7 @@ Configuration for logstash can be found in the logstash directory. Deployment of
         "api_token": ""
     }
 }
+```
 
 
 ## Disclaimer
