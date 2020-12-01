@@ -73,14 +73,15 @@ def executeCall(sfclient, command, resource, data):
 
 ##################################################
 ## SF risk engine playbook
-def sf_risk_playbook(config_file):
+def sf_risk_playbook(config):
     # Create Silverfort api client
-    sf_risk_client = SFRiskClient(config_file)
+    sf_risk_client = SFRiskClient(config["silverfort_risk_api"])
 
     #1 Get the risk of user
     print('\n\n#### Get the risk of user ####')
     command = 'sf-get-user-risk'
     resource = ''
+
     resp = executeCall(sf_risk_client, command, resource, None)
     if resp != 0:
         print("\nResult:\n" + resp)
@@ -108,9 +109,9 @@ def sf_risk_playbook(config_file):
 
 ##################################################
 ## SF authentication mfa playbook
-def sf_auth_playbook(config_file):
+def sf_auth_playbook(config):
     # Create Silverfort api client
-    sf_auth_client = SFAuthClient(config_file)
+    sf_auth_client = SFAuthClient(config["silverfort_auth_api"])
 
     #1 Send MFA to user
     print('\n\n#### Send MFA to user ')

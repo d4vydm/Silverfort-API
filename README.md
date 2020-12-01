@@ -25,23 +25,15 @@ Configuration for logstash can be found in the logstash directory. Deployment of
 ## Example config file
 ```
 {
-    "silverfort_logger": {
-        "Threshold": 3,
-        "TimeWindow": 60,
-        "MFAResponse": ["Blocked", "Auto-Response"],
-        "Action": "Denied"
-    },
-    "silverfort_api": {
+    "silverfort_risk_api": {
         "admin_uri": "",
         "api_key": "",
+        "update_interval": 1
+    },
+    "silverfort_auth_api": {
         "node_uris": [ "", "" ],
         "mfa_api_user": "",
         "mfa_api_passw": ""
-    },
-    "sentinelone": {
-        "uri": "",
-        "api": "",
-        "api_token": ""
     }
 }
 ```
